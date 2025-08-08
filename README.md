@@ -4,9 +4,6 @@
 > This fork is based on the original [Maybe Finance](https://github.com/maybe-finance/maybe) project but is **NOT affiliated with or endorsed by Maybe Finance Inc.**  
 > "Maybe" is a trademark of Maybe Finance Inc. This fork is provided under the AGPLv3 license.
 
-> [!IMPORTANT]
-> The original repository is no longer actively maintained. You can read more about this in the [final release](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0).
-
 ## About This Fork
 
 This is a personal finance app that can be [self hosted with Docker](docs/hosting/docker.md). It provides comprehensive financial tracking and management capabilities.

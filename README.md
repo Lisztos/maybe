@@ -1,25 +1,23 @@
+# Personal Finance App (Fork)
 
-<img width="1190" alt="maybe_hero" src="https://github.com/user-attachments/assets/5ed08763-a9ee-42b2-a436-e05038fcf573" />
-
-# Maybe: The personal finance app for everyone
+> **⚠️ IMPORTANT ATTRIBUTION NOTICE**  
+> This fork is based on the original [Maybe Finance](https://github.com/maybe-finance/maybe) project but is **NOT affiliated with or endorsed by Maybe Finance Inc.**  
+> "Maybe" is a trademark of Maybe Finance Inc. This fork is provided under the AGPLv3 license.
 
 > [!IMPORTANT]
-> This repository is no longer actively maintained. You can read more about this in our [final release](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0).
+> The original repository is no longer actively maintained. You can read more about this in the [final release](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0).
 
-## Maybe Hosting
+## About This Fork
 
-Maybe is a fully working personal finance app that can be [self hosted with Docker](docs/hosting/docker.md).
+This is a personal finance app that can be [self hosted with Docker](docs/hosting/docker.md). It provides comprehensive financial tracking and management capabilities.
 
-## Forking and Attribution
+## Hosting
 
-This repo is no longer maintained. You’re free to fork it under the AGPLv3. To stay compliant and avoid trademark issues:
-
-- Be sure to include the original [AGPLv3 license](https://github.com/maybe-finance/maybe/blob/main/LICENSE) and clearly state in your README that your fork is based on Maybe Finance but is **not affiliated with or endorsed by** Maybe Finance Inc.
-- "Maybe" is a trademark of Maybe Finance Inc. and therefore, use of it is NOT allowed in forked repositories (or the logo)
+This application is a fully working personal finance app that can be [self hosted with Docker](docs/hosting/docker.md).
 
 ## Local Development Setup
 
-**If you are trying to _self-host_ the Maybe app, stop here. You
+**If you are trying to _self-host_ this app, stop here. You
 should [read this guide to get started](docs/hosting/docker.md).**
 
 The instructions below are for developers to get started with contributing to the app.
@@ -56,8 +54,12 @@ For further instructions, see guides below.
 - [Windows dev setup guide](https://github.com/maybe-finance/maybe/wiki/Windows-Dev-Setup-Guide)
 - Dev containers - visit [this guide](https://code.visualstudio.com/docs/devcontainers/containers) to learn more
 
-## Copyright & license
+## Attribution & License
 
-Maybe is distributed under
-an [AGPLv3 license](https://github.com/maybe-finance/maybe/blob/main/LICENSE). "
-Maybe" is a trademark of Maybe Finance, Inc.
+**Original Project**: This fork is based on [Maybe Finance](https://github.com/maybe-finance/maybe) created by Maybe Finance Inc.
+
+**License**: This project is distributed under the [AGPLv3 license](https://github.com/maybe-finance/maybe/blob/main/LICENSE).
+
+**Trademark Notice**: "Maybe" is a trademark of Maybe Finance, Inc. This fork is not affiliated with or endorsed by Maybe Finance Inc.
+
+**Compliance**: This fork includes the original AGPLv3 license and complies with all forking requirements as specified in the original repository.

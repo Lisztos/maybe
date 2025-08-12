@@ -30,6 +30,11 @@ class Import < ApplicationRecord
     failed: "failed"
   }, validate: true, default: "pending"
 
+  enum :csv_source, {
+    standard: "standard",
+    revolut: "revolut"
+  }, validate: true, default: "standard"
+
   validates :type, inclusion: { in: TYPES }
   validates :amount_type_strategy, inclusion: { in: AMOUNT_TYPE_STRATEGIES }
   validates :col_sep, inclusion: { in: SEPARATORS.map(&:last) }
@@ -247,7 +252,8 @@ class Import < ApplicationRecord
     end
 
     def parsed_csv
-      @parsed_csv ||= self.class.parse_csv_str(raw_file_str, col_sep: col_sep)
+      source = normalized_csv_str.presence || raw_file_str
+      @parsed_csv ||= self.class.parse_csv_str(source, col_sep: col_sep)
     end
 
     def sanitize_number(value)

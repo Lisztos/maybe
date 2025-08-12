@@ -1,4 +1,9 @@
 class TransactionImport < Import
+  def generate_rows_from_csv
+    normalize_revolut_csv if csv_source == "revolut"
+    super
+  end
+
   def import!
     transaction do
       mappings.each(&:create_mappable!)
@@ -66,4 +71,30 @@ class TransactionImport < Import
     csv.delete("account") if account.present?
     csv
   end
+
+  private
+
+    def normalize_revolut_csv
+      csv = Import.parse_csv_str(raw_file_str, col_sep: col_sep)
+
+      normalized = CSV.generate do |out|
+        out << [ "date", "amount", "name", "currency" ]
+
+        csv.each do |row|
+          date = (row["Completed Date"].presence || row["Started Date"]).to_s.split(" ").first
+          out << [ date, row["Amount"], row["Description"], row["Currency"] ]
+        end
+      end
+
+      update!(
+        normalized_csv_str: normalized,
+        date_col_label: "date",
+        amount_col_label: "amount",
+        name_col_label: "name",
+        currency_col_label: "currency",
+        date_format: "%Y-%m-%d"
+      )
+
+      @parsed_csv = @csv_rows = @csv_sample = nil
+    end
 end

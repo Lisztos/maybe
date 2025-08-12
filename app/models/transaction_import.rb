@@ -78,11 +78,11 @@ class TransactionImport < Import
       csv = Import.parse_csv_str(raw_file_str, col_sep: col_sep)
 
       normalized = CSV.generate do |out|
-        out << ["date", "amount", "name", "currency"]
+        out << [ "date", "amount", "name", "currency" ]
 
         csv.each do |row|
           date = (row["Completed Date"].presence || row["Started Date"]).to_s.split(" ").first
-          out << [date, row["Amount"], row["Description"], row["Currency"]]
+          out << [ date, row["Amount"], row["Description"], row["Currency"] ]
         end
       end
 

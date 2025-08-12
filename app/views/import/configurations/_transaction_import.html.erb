@@ -11,7 +11,7 @@
                        import_amount_type_column_key_value: @import.entity_type_col_label
                      } do |form| %>
   <%= form.select :csv_source,
-                  [["Standard", "standard"], ["Revolut", "revolut"]],
+                  [ [ "Standard", "standard" ], [ "Revolut", "revolut" ] ],
                   { label: "CSV source" },
                   required: true %>
 
@@ -44,7 +44,7 @@
 
   <%# Amount Type Strategy %>
   <%= form.select :amount_type_strategy,
-                  Import::AMOUNT_TYPE_STRATEGIES.map { |strategy| [strategy.humanize, strategy] },
+                  Import::AMOUNT_TYPE_STRATEGIES.map { |strategy| [ strategy.humanize, strategy ] },
                   { label: "Amount type strategy", prompt: "Select strategy" },
                   required: true,
                   data: {
@@ -58,7 +58,7 @@
     <div class="flex items-center gap-2">
       <span class="text-sm shrink-0 text-secondary">↪</span>
       <%= form.select :signage_convention,
-                      [["Incomes are positive", "inflows_positive"], ["Incomes are negative", "inflows_negative"]],
+                      [ [ "Incomes are positive", "inflows_positive" ], [ "Incomes are negative", "inflows_negative" ] ],
                       { label: "Amount type", prompt: "Select convention" },
                       required: @import.amount_type_strategy == "signed_amount" %>
     </div>

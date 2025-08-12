@@ -10,6 +10,10 @@
                        import_csv_value: import.csv_rows.to_json,
                        import_amount_type_column_key_value: @import.entity_type_col_label
                      } do |form| %>
+  <%= form.select :csv_source,
+                  [["Standard", "standard"], ["Revolut", "revolut"]],
+                  { label: "CSV source" },
+                  required: true %>
 
   <%# Date Configuration %>
   <div class="flex items-center gap-4">

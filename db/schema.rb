@@ -380,6 +380,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_07_24_115507) do
     t.string "exchange_operating_mic_col_label"
     t.string "amount_type_strategy", default: "signed_amount"
     t.string "amount_type_inflow_value"
+    t.string "csv_source", default: "standard", null: false
     t.index ["family_id"], name: "index_imports_on_family_id"
   end
 

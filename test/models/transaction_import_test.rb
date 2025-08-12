@@ -100,4 +100,18 @@ class TransactionImportTest < ActiveSupport::TestCase
 
     assert_equal [ -100, 200, -300 ], @import.entries.map(&:amount)
   end
+
+  test "normalizes revolut csv files" do
+    file = file_fixture("imports/revolut.csv").read
+
+    @import.update!(raw_file_str: file, csv_source: "revolut")
+
+    @import.generate_rows_from_csv
+    row = @import.rows.first
+
+    assert_equal "2025-01-23", row.date
+    assert_equal "2500.00", row.amount
+    assert_equal "Savings Vault topup", row.name
+    assert_equal "EUR", row.currency
+  end
 end
